@@ -69,11 +69,11 @@ export function getModulePaths<T extends Record<string, unknown>>(
     if (
       dir.includes('.github') ||
       dir.includes('.ci') ||
-      dir.includes('.terraform')
+      dir.includes('.terragrunt')
     ) {
       return paths
     }
-    if (ext === '.tf' || base === '.terraform.lock.hcl') {
+    if (ext === '.hcl' || base === '.terraform.lock.hcl' || ext == '.json') {
       paths.push(dir)
     } else if (ext.match(/ya?ml/) !== null || ext === '.tpl') {
       const splitPath = dir.split('/')
