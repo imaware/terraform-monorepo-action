@@ -65,7 +65,7 @@ export function getModulePaths<T extends Record<string, unknown>>(
   pathProp: keyof T,
 ): string[] {
   const result = files?.reduce<string[]>((paths, file) => {
-    core.debug(file)
+    core.debug('HERE')
     const { dir, base, ext } = parse(file[pathProp] as string)
     // const globalIgnore = ['.github', '.ci', '.terraform']
 

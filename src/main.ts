@@ -20,7 +20,6 @@ async function run(): Promise<void> {
       case 'changed':
         modules = await getChangedModules(token)
         core.debug('CHANGED')
-        core.debug(modules)
         break
 
       default:
