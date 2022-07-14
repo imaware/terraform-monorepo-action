@@ -34,7 +34,7 @@ async function run(): Promise<void> {
     if (modules.length) {
       core.debug(`Found modules:${modules.map((module) => `\n- ${module}`)}`)
     } else {
-      core.debug('No modules found')
+      core.debug('No modulessssssss found')
     }
 
     core.setOutput('modules', modules)
