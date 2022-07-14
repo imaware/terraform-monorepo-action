@@ -14,12 +14,10 @@ async function run(): Promise<void> {
     switch (mode) {
       case 'all':
         modules = await getAllModules(token)
-        core.debug('ALL')
         break
 
       case 'changed':
         modules = await getChangedModules(token)
-        core.debug('CHANGED')
         break
 
       default:
@@ -34,7 +32,7 @@ async function run(): Promise<void> {
     if (modules.length) {
       core.debug(`Found modules:${modules.map((module) => `\n- ${module}`)}`)
     } else {
-      core.debug('Nothing modulessssssss found')
+      core.debug('No modules found')
     }
 
     core.setOutput('modules', modules)
