@@ -14,10 +14,12 @@ async function run(): Promise<void> {
     switch (mode) {
       case 'all':
         modules = await getAllModules(token)
+        core.debug('ALL')
         break
 
       case 'changed':
         modules = await getChangedModules(token)
+        core.debug('CHANGED')
         core.debug(modules)
         break
 
