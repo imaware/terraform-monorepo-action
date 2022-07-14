@@ -1,4 +1,6 @@
 import { parse } from 'path'
+import * as core from '@actions/core'
+
 import { context, getOctokit } from '@actions/github'
 import {
   PullRequestEvent,
@@ -63,6 +65,7 @@ export function getModulePaths<T extends Record<string, unknown>>(
   pathProp: keyof T,
 ): string[] {
   const result = files?.reduce<string[]>((paths, file) => {
+    core.debug(file)
     const { dir, base, ext } = parse(file[pathProp] as string)
     // const globalIgnore = ['.github', '.ci', '.terraform']
 
